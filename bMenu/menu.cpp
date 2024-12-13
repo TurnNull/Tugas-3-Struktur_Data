@@ -57,7 +57,12 @@ int main() {
       getch();
       break;
     case '2':
-      /* code */
+      system("cls"); 
+      cout << "Data yang telah dimasukkan:" << endl;
+      for (int i = 1; i <= n; i++) {
+          cout << "data[" << i << "] = " << data[i] << endl;
+      }
+      getch();
       break;  
     case '3':
       mPertama("ke- tiga");
