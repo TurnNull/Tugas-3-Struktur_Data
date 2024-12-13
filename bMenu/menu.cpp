@@ -2,7 +2,7 @@
 #include <conio.h>
 using namespace std;
 
-
+int n;
 void dMenu(){
 system("cls");
 cout<<"Aplikasi Sorting Bubble"<<"\n";       
@@ -16,48 +16,59 @@ cout<<"Masukan angka : ";
 }
 
 void mPertama(string pesan){
-system("cls");
-cout<<"hallo saya menu "<<pesan;
-getch();
+  system("cls");
+  cout<<"hallo saya menu "<<pesan;
+  getch();
+}
+
+void tukar(int *a, int *b) {
+  int t = *a;
+  *a = *b;
+  *b = t;
 }
 
 
+
+void tampilkan() {
+
+}
+
 int main() {
 char pl;
-do
-{
+int data[100]; 
+do {
     dMenu();
     pl=getch();
-  switch (pl)
-  {
-   case '1':
-    /* code */
-    mPertama("pertama");
-    break;
-   case '2':
-    mPertama("ke- dua");
-    /* code */ 
-    break;  
-   case '3':
-    mPertama("ke- tiga");
-    /* code */
-    break;  
-   case '4':
-    mPertama("ke- empat");
-    /* code */
-    break;  
-  case '5':
-    /* code */
-    break;
-  
-  default:
-    system("cls");
-    cout<<"Pilihan Tidak Tersedia";
-    getch();
-    break;
-  }
+  switch (pl) {
+    case '1':
+      /* code */
+      cin>>n;
+      for(int i = 0; i <= n; i++) {
 
-
-} while (pl!='5');
-  return 0;
+      }
+      break;
+    case '2':
+      mPertama("ke- dua");
+      /* code */ 
+      break;  
+    case '3':
+      mPertama("ke- tiga");
+      /* code */
+      break;  
+    case '4':
+      mPertama("ke- empat");
+      /* code */
+      break;  
+    case '5':
+      /* code */
+      break;
+    
+    default:
+      system("cls");
+      cout<<"Pilihan Tidak Tersedia";
+      getch();
+      break;
+    }
+  } while (pl!='5');
+    return 0;
 }
