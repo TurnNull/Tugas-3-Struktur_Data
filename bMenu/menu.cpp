@@ -4,15 +4,14 @@ using namespace std;
 
 int n;
 void dMenu(){
-system("cls");
-cout<<"Aplikasi Sorting Bubble"<<"\n";       
-cout<<"1. Masukan data"<<"\n";            
-cout<<"2. Tampilkan data "<<"\n";            
-cout<<"3. Sorting asc "<<"\n";           
-cout<<"4. Sorting dsc"<<"\n";            
-cout<<"5. Exit"<<"\n";           
-cout<<"Masukan angka : ";        
-
+  system("cls");
+  cout<<"Aplikasi Sorting Bubble"<<"\n";       
+  cout<<"1. Masukan data"<<"\n";            
+  cout<<"2. Tampilkan data "<<"\n";            
+  cout<<"3. Sorting asc "<<"\n";           
+  cout<<"4. Sorting dsc"<<"\n";            
+  cout<<"5. Exit"<<"\n";           
+  cout<<"Masukan angka : ";        
 }
 
 void mPertama(string pesan){
@@ -27,29 +26,38 @@ void tukar(int *a, int *b) {
   *b = t;
 }
 
+void tampilArray() {
+  // 
+}
 
+void tampilAsc() {
+  // 
+}
 
-void tampilkan() {
-
+void tampilDsc() {
+  // 
 }
 
 int main() {
-char pl;
-int data[100]; 
-do {
+  char pl;
+  int data[100]; 
+  do {
     dMenu();
     pl=getch();
   switch (pl) {
     case '1':
       /* code */
+      system("cls");
+      cout<<"Masukan panjang data : ";
       cin>>n;
-      for(int i = 0; i <= n; i++) {
-
+      for(int i = 1; i <= n; i++) {
+        cout << "Masukan data ke ["<< i <<"] : ";
+        cin >> data[i];
       }
+      getch();
       break;
     case '2':
-      mPertama("ke- dua");
-      /* code */ 
+      /* code */
       break;  
     case '3':
       mPertama("ke- tiga");
@@ -62,7 +70,6 @@ do {
     case '5':
       /* code */
       break;
-    
     default:
       system("cls");
       cout<<"Pilihan Tidak Tersedia";
