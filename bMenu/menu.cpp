@@ -26,51 +26,76 @@ void tukar(int *a, int *b) {
   *b = t;
 }
 
-void tampilArray() {
-  // 
+void masukArray(int data[100]) {
+  system("cls");
+  cout<<"Masukan panjang data : ";
+  cin>>n;
+  for(int i = 1; i <= n; i++) {
+    cout << "Masukan data ke ["<< i <<"] : ";
+    cin >> data[i];
+  }
+  getch();
 }
 
-void tampilAsc() {
-  // 
+void tampilArray(int data[100]) {
+  system("cls"); 
+  cout << "Data yang telah dimasukkan: " << endl;
+  for (int i = 1; i <= n; i++) {
+      cout << "data[" << i << "] = " << data[i] << endl;
+  }
+  getch();
 }
 
-void tampilDsc() {
-  // 
+void bubbleSortAsc(int data[100]) {
+  system("cls");
+  for (int i = 1; i <= n; i++) {
+    for (int j = n; j >= i; j--) {
+      if (data[j] < data[j-1]) {
+          tukar(&data[j], &data[j-1]);
+      }
+    }
+  }
+
+  for (int i = 0; i+1 <= n; i++) {
+    cout << "data[" << i << "] = " << data[i] << endl;
+  }
+  getch(); 
+}
+
+void bubbleSortDsc(int data[100]) {
+  system("cls");
+  for (int i = 1; i <= n; i++) {
+    for (int j = 0; j <= n-i; j++) {
+      if (data[j] < data[j+1]) {
+          tukar(&data[j], &data[j+1]);
+      }
+    }
+  }
+
+  for (int i = 1; i+1 <= n+1; i++) {
+    cout << "data[" << i << "] = " << data[i] << endl;
+  }
+  getch(); 
 }
 
 int main() {
-  char pl;
-  int data[100]; 
+  int data[100];
+  char pl; 
   do {
     dMenu();
     pl=getch();
   switch (pl) {
     case '1':
-      /* code */
-      system("cls");
-      cout<<"Masukan panjang data : ";
-      cin>>n;
-      for(int i = 1; i <= n; i++) {
-        cout << "Masukan data ke ["<< i <<"] : ";
-        cin >> data[i];
-      }
-      getch();
+      masukArray(data);
       break;
     case '2':
-      system("cls"); 
-      cout << "Data yang telah dimasukkan:" << endl;
-      for (int i = 1; i <= n; i++) {
-          cout << "data[" << i << "] = " << data[i] << endl;
-      }
-      getch();
+      tampilArray(data);
       break;  
     case '3':
-      mPertama("ke- tiga");
-      /* code */
+      bubbleSortAsc(data);
       break;  
     case '4':
-      mPertama("ke- empat");
-      /* code */
+      bubbleSortDsc(data);
       break;  
     case '5':
       /* code */
